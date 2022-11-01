@@ -8,3 +8,5 @@ cdk diff
 cdk deploy -all
 # destruir todas stacks
 cdk destroy --all
+# instalar pilhas de bootstrap** instalação de recursos necessários como s3 para o docker
+cdk bootstrap
