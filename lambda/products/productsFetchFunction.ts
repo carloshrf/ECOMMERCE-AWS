@@ -5,7 +5,10 @@ import {
 } from 'aws-lambda';
 import { ProductRepository } from '/opt/nodejs/productsLayer';
 import { DynamoDB } from 'aws-sdk';
+import * as AWSXRay from 'aws-xray-sdk';
 
+// monitorar tempo gasto que é usado a partir do aws-sdk 
+AWSXRay.captureAWS(require('aws-sdk'));
 const productsDdb = process.env.PRODUCTS_DDB!;
 const ddbClient = new DynamoDB.DocumentClient();
 
